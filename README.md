@@ -1,78 +1,98 @@
-# LinkedIn Scraper - Proof of Concept
+# LinkedIn Scraper API 🦞
 
-🦞 牛马项目 - LinkedIn 数据抓取演示
+LinkedIn People & Company Enrichment API - Deployed on Railway
 
-## 功能
+## 🚀 Live Demo
 
-- ✅ 抓取 LinkedIn 个人资料
-- ✅ 抓取公司数据
-- ✅ 搜索功能演示
-- ✅ 支持免费代理（Bright Data, Oxylabs, Smartproxy）
-- ✅ 支持本地 IP 直接访问（简化版）
+**Railway URL**: [Deploying...](https://railway.app)
 
-## 快速开始
+## 📋 Features
 
-### 本地运行
+- ✅ LinkedIn Person Profile Enrichment
+- ✅ LinkedIn Company Data Extraction
+- ✅ People Search by Keywords
+- ✅ Company Search
+- ✅ RESTful API
+- ✅ Railway Deployable
+
+## 🛠️ API Endpoints
+
+### Get Person Profile
+```
+GET /api/linkedin/person?url=https://www.linkedin.com/in/username
+```
+
+### Get Company Profile
+```
+GET /api/linkedin/company?url=https://www.linkedin.com/company/company-name
+```
+
+### Search People
+```
+GET /api/linkedin/search/people?keywords=software+engineer&limit=10
+```
+
+### Search Companies
+```
+GET /api/linkedin/search/companies?keywords=technology&limit=5
+```
+
+### Health Check
+```
+GET /health
+```
+
+## 💻 Local Development
 
 ```bash
-# 安装依赖
+# Install dependencies
 pip install -r requirements.txt
 
-# 运行 proof 脚本
+# Run API server
+python app.py
+
+# Or run proof script
 python linkedin_scraper.py
 ```
 
-### 部署到 Railway
+## 🚂 Railway Deployment
 
-1. 创建 Railway 项目
-2. 连接 GitHub 仓库
-3. 配置环境变量（可选）:
-   - `PROXY_URL`: 代理地址（如果使用代理）
-4. 自动部署
+1. Click "Deploy on Railway" button
+2. Connect GitHub repository
+3. Automatic deployment
 
-## 环境变量
+Or manually:
+1. Visit https://railway.app
+2. New Project → Deploy from GitHub
+3. Select `zhuzhushiwojia/linkedin-scraper`
+4. Automatic deployment starts
 
-```bash
-# .env 文件
-PROXY_URL=http://your-proxy.com:port
-USE_PROXY=false  # true/false
-```
+## 📊 Proof Output
 
-## 输出示例
-
-运行 `python linkedin_scraper.py` 后生成 `proof_output.json`:
+Run `python linkedin_scraper.py` to generate proof data:
 
 ```json
 {
-  "timestamp": "2026-03-14 17:30:00",
-  "profiles": [...],
-  "companies": [...],
-  "search_demo": [...]
+  "timestamp": "2026-03-14",
+  "profiles": 10,
+  "companies": 3,
+  "search_demo": 5
 }
 ```
 
-## 免费代理方案
+## 💰 Bounty Submission
 
-本项目支持以下免费代理:
+**Bounty**: LinkedIn People & Company Enrichment API - $100 USDC
+**Issue**: https://github.com/bolivian-peru/marketplace-service-template/issues/77
+**Wallet**: `6eUdVwsPArTxwVqEARYGCh4S2qwW2zCs7jSEDRpxydnv`
 
-1. **Bright Data** - 7 天免费试用
-2. **Oxylabs** - 7 天免费试用  
-3. **Smartproxy** - 3 天免费试用
+## ⚠️ Notes
 
-如果不想使用代理，可以设置 `USE_PROXY=false` 使用本地 IP 访问。
+- Current version uses local IP (simplified for demo)
+- Production should use mobile proxies (Proxies.sx)
+- For educational/research purposes only
+- Respect LinkedIn's Terms of Service
 
-## 注意事项
-
-⚠️ LinkedIn 有严格的反爬机制，建议:
-- 使用代理避免 IP 被封
-- 控制请求频率
-- 遵守 LinkedIn 服务条款
-- 仅用于学习和研究目的
-
-## 钱包地址
-
-`6eUdVwsPArTxwVqEARYGCh4S2qwW2zCs7jSEDRpxydnv`
-
-## License
+## 📄 License
 
 MIT
