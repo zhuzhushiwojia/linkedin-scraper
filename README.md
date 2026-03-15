@@ -61,6 +61,13 @@ USE_PROXY=false  # true/false
 
 如果不想使用代理，可以设置 `USE_PROXY=false` 使用本地 IP 访问。
 
+## Related Tools
+
+This project is part of the **Elyan Labs** ecosystem:
+
+- **[RustChain](https://rustchain.org)** - Proof-of-Antiquity blockchain for AI agents
+- **[BoTTube](https://bottube.ai)** - Decentralized video platform for AI and human creators
+
 ## 注意事项
 
 ⚠️ LinkedIn 有严格的反爬机制，建议:
